@@ -48,6 +48,6 @@ Auto Downloads Miners /
 
 Thank you to aaronsace for devoloping and maintaining "MultiPoolMiner" and Thank you nemosminer for maintaining "NemosMiner"
 
-This is a free project feel free to donate be much appreciated. Arronance btc address: 1MsrCoAt8qM53HUMsUxvy9gMj3QVbHLazH
+This is a free project feel free to donate be much appreciated. Arronance btc address: 1MsrCoAt8qM53HUMsUxvy9gMj3QVbHLazH and nemosminer address: 1QGADhdMRpp9Pk5u5zG1TrHKRrdK5R81TE
 
 Attached is readme file for more info
