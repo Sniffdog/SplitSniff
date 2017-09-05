@@ -20,7 +20,7 @@ $Algorithms = [PSCustomObject]@{
     Groestl = 'groestl'
     #Keccak = 'keccak' #use TpruvoT
     #Scrypt = 'scrypt' #use TpruvoT
-    #Nist5 = 'nist5'
+    Nist5 = 'nist5'
 }
 
 $Optimizations = [PSCustomObject]@{
@@ -40,7 +40,7 @@ $Optimizations = [PSCustomObject]@{
     Groestl = ' -d $SplitSniffCC'
     Keccak = ''
     Scrypt = ''
-    Nist5 = ''
+    Nist5 = ' -d $SplitSniffCC'
 }
 
 $Algorithms | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name | ForEach {
