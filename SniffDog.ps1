@@ -22,7 +22,11 @@
     [Parameter(Mandatory=$false)]
     [Array]$Algorithm = $null, #i.e. Ethash,Equihash,Cryptonight ect.
     [Parameter(Mandatory=$false)]
-    [Array]$MinerName = $null, 
+    [Array]$MinerName = $null,
+    [Parameter(Mandatory=$false)] 
+    [String]$SplitSniffEWBF = "0", 
+    [Parameter(Mandatory=$false)] 
+    [String]$SplitSniffCC = "0",
     [Parameter(Mandatory=$false)]
     [Array]$PoolName = $null, 
     [Parameter(Mandatory=$false)]
