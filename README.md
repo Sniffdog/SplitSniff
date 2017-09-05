@@ -8,7 +8,7 @@ Auto Benchmarks Each algo to get optimal speeds and benches throughout monitorin
 
 Fully automated / Set And Forget in Startsniff.bat/
 
-How to set in StartSniff.bat:
+# Please edit SplitSniff.bat (This is how to set for auto convert to btc)
 
 1) Place your Bitcoin address after -u in StartSniff.bat
 
