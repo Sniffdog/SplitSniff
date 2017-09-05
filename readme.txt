@@ -1,14 +1,14 @@
 Few things to note:
 
-Malaware tried to steal Zcash miner...You may have to exempt sniffdog folder before running Startsniff.bat
+Malaware tried to steal Zcash miner...You may have to exempt sniffdog folder before running Splitsniffin.bat
 
-Please change startsniff.bat to YOUR information concerning MiningPoolHub ie: Username and Workername
+Please change Splitsniffin.bat to YOUR information concerning MiningPoolHub ie: Username and Workername
 
 Workername will be on zpool and hashrefinery as ID=(your Workername)
 
-Startsniff.bat file is set for BTC... You can change to your currency (Make sure you use the same wallet address as currency)
+Splitsniffin.bat file is set for BTC... You can change to your currency (Make sure you use the same wallet address as currency)
 
-Decide which pool to mine at by -Poolname in Startsniff.bat
+Decide which pool to mine at by -Poolname in Splitsniffin.bat
 
 Donate is set for 5 minutes... to turn off set start bat file to -Donate 0 (only 5 minutes a day)
 
