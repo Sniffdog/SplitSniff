@@ -6,7 +6,7 @@ Thanks to Arronsace and NemosMiner --SniffDog-- has been created to Monitor Mini
 
 Auto Benchmarks Each algo to get optimal speeds and benches throughout monitoring 
 
-Fully automated / Set And Forget in Startsniff.bat/
+Fully automated / Set And Forget in Splitsniffin.bat/
 
 # Please edit SplitSniffin.bat (This is how to set for auto convert to btc at Zpool and Hashrefinery)
 
@@ -36,9 +36,9 @@ Choose which Currency you would like bitcoin to be in and stats for that currenc
 
 # SplitSniffCC and SplitSniffEWBF
 
-Very Important... SplitsniffCC must use quotation and commas for each GPU selected (ie: '0,1,2,3,4,5,6,7')
+Very Important... SplitsniffCC (ccminer) must use quotation and commas for each GPU selected (ie: '0,1,2,3,4,5,6,7')
 
-Very Important... SplitSniffEWBF must use quotation without commas (ie: '0 1 2 3 4 5 6 7')
+Very Important... SplitSniffEWBF (equihash) must use quotation without commas for each GPU selected (ie: '0 1 2 3 4 5 6 7')
 
 # Go out with your friends and enjoy life! This is designed to catch market rise on coins when you're not there!
 
