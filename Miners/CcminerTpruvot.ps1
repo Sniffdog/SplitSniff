@@ -66,7 +66,7 @@ $Optimizations = [PSCustomObject]@{
     Lbry = ''
     Jha = ' -d $SplitSniffCC'
     Skunk = ' -d $SplitSniffCC'
-    Tribus = '-d $SplitSniffCC'
+    Tribus = ' -d $SplitSniffCC'
 }
 
 $Algorithms | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name | ForEach {
