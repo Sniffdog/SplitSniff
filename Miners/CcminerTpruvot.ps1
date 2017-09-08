@@ -37,9 +37,9 @@ $Algorithms = [PSCustomObject]@{
 }
 
 $Optimizations = [PSCustomObject]@{
-    Lyra2z = ' -d $SplitSniffCC'
+    Lyra2z = ' -d $SplitSniffCC --api-remote --api-allow=0/0'
     Equihash = ''
-    Cryptonight = ' -d $SplitSniffCC'
+    Cryptonight = ' -d $SplitSniffCC --api-remote --api-allow=0/0'
     Ethash = ''
     Sia = ''
     Yescrypt = ''
@@ -53,20 +53,20 @@ $Optimizations = [PSCustomObject]@{
     Groestl = ''
     Keccak = ''
     Scrypt = ''
-    Bitcore = ' -d $SplitSniffCC'
+    Bitcore = ' -d $SplitSniffCC --api-remote --api-allow=0/0'
     Blake2s = ''
     Sib = ''
     X17 = ''
     Quark = ''
-    Hmq1725 = ' -d $SplitSniffCC'
+    Hmq1725 = ' -d $SplitSniffCC --api-remote --api-allow=0/0'
     Veltor = ''
     X11evo = ''
-    Timetravel = ' -d $SplitSniffCC'
+    Timetravel = ' -d $SplitSniffCC --api-remote --api-allow=0/0'
     Blakecoin = ''
     Lbry = ''
-    Jha = ' -d $SplitSniffCC'
-    Skunk = ' -d $SplitSniffCC'
-    Tribus = ' -d $SplitSniffCC'
+    Jha = ' -d $SplitSniffCC --api-remote --api-allow=0/0'
+    Skunk = ' -d $SplitSniffCC --api-remote --api-allow=0/0'
+    Tribus = ' -d $SplitSniffCC --api-remote --api-allow=0/0'
 }
 
 $Algorithms | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name | ForEach {
