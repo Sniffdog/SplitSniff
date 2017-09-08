@@ -1,10 +1,10 @@
-# SniffDog-Zpool, MiningPoolHub, HashRefinery
+# SniffDog-Zpool.ca, MiningPoolHub.com, HashRefinery.com, and Ahashpool.com 
 
 *This is Windows software designed for Nvidia 1080ti
 
 *Malaware tried to steal Zcash miner...You may have to exempt sniffdog folder before running Splitsniffin.bat
 
-Thanks to Arronsace and NemosMiner --SniffDog-- has been created to Monitor MiningPoolHub, Zpool, and HashRefinery mining pools in real-time in order to find the most profitable Algo /
+Thanks to Arronsace and NemosMiner --SniffDog-- has been created to Monitor MiningPoolHub.com, Zpool.ca, HashRefinery.com, and Ahashpool.com mining pools in real-time in order to find the most profitable Algo /
 
 Auto Benchmarks Each algo to get optimal speeds and benches throughout monitoring 
 
@@ -36,7 +36,7 @@ Choose which Currency you would like bitcoin to be in and stats for that currenc
 
 2) Delay(in seconds) for how long before miners switching from 1 instance of algo to another (Default is 1 second)
 
-# SplitSniffCC and SplitSniffEWBF
+# SplitSniffCC and SplitSniffEWBF(please set these before you start miner)
 
 Very Important... SplitsniffCC (ccminer) must use quotation and commas for each GPU selected (ie: '0,1,2,3,4,5,6,7')
 
