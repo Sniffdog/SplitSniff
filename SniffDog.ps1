@@ -269,6 +269,7 @@ while($true)
             }
             elseif($_.Process.HasExited -eq $false)
             {
+                $_.Active += (Get-Date)-$_.Process.StartTime
                 $_.Process.CloseMainWindow() | Out-Null
                 $_.Status = "Idle"
             }
@@ -281,7 +282,6 @@ while($true)
                 $DecayStart = Get-Date
                 $_.New = $true
                 $_.Activated++
-                if($_.Process -ne $null){$_.Active += $_.Process.ExitTime-$_.Process.StartTime}
                 if($_.Wrap){$_.Process = Start-Process -FilePath "PowerShell" -ArgumentList "-executionpolicy bypass -command . '$(Convert-Path ".\Wrapper.ps1")' -ControllerProcessID $PID -Id '$($_.Port)' -FilePath '$($_.Path)' -ArgumentList '$($_.Arguments)' -WorkingDirectory '$(Split-Path $_.Path)'" -PassThru}
                 else{$_.Process = Start-SubProcess -FilePath $_.Path -ArgumentList $_.Arguments -WorkingDirectory (Split-Path $_.Path)}
                 if($_.Process -eq $null){$_.Status = "Failed"}
@@ -306,7 +306,7 @@ while($true)
     #Display active miners list
     $ActiveMinerPrograms | Sort -Descending Status,{if($_.Process -eq $null){[DateTime]0}else{$_.Process.StartTime}} | Select -First (1+6+6) | Format-Table -Wrap -GroupBy Status (
         @{Label = "Speed"; Expression={$_.HashRate | ForEach {"$($_ | ConvertTo-Hash)/s"}}; Align='right'}, 
-        @{Label = "Active"; Expression={"{0:dd} Days {0:hh} Hours {0:mm} Minutes" -f $(if($_.Process -eq $null){$_.Active}else{if($_.Process.ExitTime -gt $_.Process.StartTime){($_.Active+($_.Process.ExitTime-$_.Process.StartTime))}else{($_.Active+((Get-Date)-$_.Process.StartTime))}})}}, 
+        @{Label = "Active"; Expression={"{0:dd} Days {0:hh} Hours {0:mm} Minutes" -f $(if($_.Process -eq $null){$_.Active}else{if($_.Process.HasExited){($_.Active)}else{($_.Active+((Get-Date)-$_.Process.StartTime))}})}}, 
         @{Label = "Launched"; Expression={Switch($_.Activated){0 {"Never"} 1 {"Once"} Default {"$_ Times"}}}}, 
         @{Label = "Command"; Expression={"$($_.Path.TrimStart((Convert-Path ".\"))) $($_.Arguments)"}}
     ) | Out-Host
@@ -316,17 +316,17 @@ while($true)
 
     #Save current hash rates
     $ActiveMinerPrograms | ForEach {
-        $_.HashRate = 0
-        $Miner_HashRates = $null
-
-        if($_.New){$_.Benchmarked++}
-
         if($_.Process -eq $null -or $_.Process.HasExited)
         {
             if($_.Status -eq "Running"){$_.Status = "Failed"}
         }
         else
         {
+            $_.HashRate = 0  
+            $Miner_HashRates = $null  
+   
+            if($_.New){$_.Benchmarked++} 
+
             $Miner_HashRates = Get-HashRate $_.API $_.Port ($_.New -and $_.Benchmarked -lt 3)
 
             $_.HashRate = $Miner_HashRates | Select -First $_.Algorithms.Count
@@ -345,7 +345,7 @@ while($true)
         #Benchmark timeout
         if($_.Benchmarked -ge 6 -or ($_.Benchmarked -ge 2 -and $_.Activated -ge 2))
         {
-            for($i = $Miner_HashRates.Count; $i -lt $_.Algorithms.Count; $i++)
+            for($i = 0; $i -lt $_.Algorithms.Count; $i++)
             {
                 if((Get-Stat "$($_.Name)_$($_.Algorithms | Select -Index $i)_HashRate") -eq $null)
                 {
