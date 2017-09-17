@@ -1,4 +1,4 @@
-# SniffDog-Zpool.ca, MiningPoolHub.com, HashRefinery.com, and Ahashpool.com 
+# SniffDog-www.zpool.ca, www.MiningPoolHub.com, www.HashRefinery.com, and www.ahashpool.com 
 
 *This is Windows software designed for Nvidia 1080ti
 
