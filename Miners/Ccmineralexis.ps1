@@ -32,7 +32,7 @@ $Algorithms = [PSCustomObject]@{
     Blakecoin = 'blakecoin'
     Lbry = 'lbry'
     C11 = 'c11'
-    #Nist5 = 'nist5'
+    Nist5 = 'nist5'
 }
 
 $Optimizations = [PSCustomObject]@{
@@ -64,7 +64,7 @@ $Optimizations = [PSCustomObject]@{
     Blakecoin = ' -d $SplitSniffCC'
     Lbry = ' -i 28 -d $SplitSniffCC'
     C11 = ' -d $SplitSniffCC'
-    Nist5 = ''
+    Nist5 = ' -i 25 -d $SplitSniffCC'
 }
 
 $Algorithms | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name | ForEach {
