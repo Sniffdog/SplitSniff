@@ -1,4 +1,4 @@
-﻿$Path = '.\Bin\NVIDIA-Poly2\ccminer.exe'
+﻿$Path = '.\Bin\NVIDIA-Poly4\ccminer.exe'
 $Uri = 'https://github.com/punxsutawneyphil/ccminer/releases/download/polytimosv2/ccminer-polytimos_v2.zip'
  
 
@@ -42,9 +42,9 @@ $Algorithms = [PSCustomObject]@{
 }
 
 $Optimizations = [PSCustomObject]@{
-    Lyra2z = ' -d $SplitSniffCC2'
+    Lyra2z = ' -d $SplitSniffCC4'
     Equihash = ''
-    Cryptonight = ' -d $SplitSniffCC2'
+    Cryptonight = ' -d $SplitSniffCC4'
     Ethash = ''
     Sia = ''
     Yescrypt = ''
@@ -58,34 +58,34 @@ $Optimizations = [PSCustomObject]@{
     Groestl = ''
     Keccak = ''
     Scrypt = ''
-    Bitcore = ' -d $SplitSniffCC2'
+    Bitcore = ' -d $SplitSniffCC4'
     Blake2s = ''
     Sib = ''
     X17 = ''
     Quark = ''
-    Hmq1725 = ' -d $SplitSniffCC2'
+    Hmq1725 = ' -d $SplitSniffCC4'
     Veltor = ''
     X11evo = ''
-    Timetravel = ' -d $SplitSniffCC2'
+    Timetravel = ' -d $SplitSniffCC4'
     Blakecoin = ''
     Lbry = ''
-    Jha = ' -d $SplitSniffCC2'
-    Skunk = ' -d $SplitSniffCC2'
-    Tribus = ' -d $SplitSniffCC2'
-    Phi = ' -d $SplitSniffCC2'
-    Hsr = ' -d $SplitSniffCC2'
-    Polytimos = ' -d $SplitSniffCC2'
+    Jha = ' -d $SplitSniffCC4'
+    Skunk = ' -d $SplitSniffCC4'
+    Tribus = ' -d $SplitSniffCC4'
+    Phi = ' -d $SplitSniffCC4'
+    Hsr = ' -d $SplitSniffCC4'
+    Polytimos = ' -d $SplitSniffCC4'
     
 }
 
 $Algorithms | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name | ForEach {
     [PSCustomObject]@{
-        Type = 'NVIDIA2'
+        Type = 'NVIDIA4'
         Path = $Path
-        Arguments = -Join ('-a ', $Algorithms.$_, ' -o stratum+tcp://$($Pools.', $_, '.Host):$($Pools.', $_, '.Port) -b 0.0.0.0:4069 -u $($Pools.', $_, '.User2) -p $($Pools.', $_, '.Pass)', $Optimizations.$_)
+        Arguments = -Join ('-a ', $Algorithms.$_, ' -o stratum+tcp://$($Pools.', $_, '.Host):$($Pools.', $_, '.Port) -b 0.0.0.0:4072 -u $($Pools.', $_, '.User4) -p $($Pools.', $_, '.Pass)', $Optimizations.$_)
         HashRates = [PSCustomObject]@{$_ = -Join ('$($Stats.', $Name, '_', $_, '_HashRate.Week)')}
         API = 'Ccminer'
-        Port = 4069
+        Port = 4072
         Wrap = $false
         URI = $Uri
     }
