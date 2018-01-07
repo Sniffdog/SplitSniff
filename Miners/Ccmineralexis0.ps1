@@ -43,35 +43,35 @@ $Optimizations = [PSCustomObject]@{
     Sia = ''
     Yescrypt = ''
     BlakeVanilla = ''
-    Lyra2RE2 = ' -i 24 -d $SplitSniffCC'
-    Skein = ' -i 28 -d $SplitSniffCC'
+    Lyra2RE2 = ' -i 24 -d $SplitSniffCC0'
+    Skein = ' -i 28 -d $SplitSniffCC0'
     Qubit = ''
     NeoScrypt = ''
-    X11 = ' -d $SplitSniffCC'
-    MyriadGroestl = ' -d $SplitSniffCC'
+    X11 = ' -d $SplitSniffCC0'
+    MyriadGroestl = ' -d $SplitSniffCC0'
     Groestl = ''
-    Keccak = ' -d $SplitSniffCC'
+    Keccak = ' -d $SplitSniffCC0'
     Scrypt = ''
     Bitcore = ''
-    Blake2s = ' -d $SplitSniffCC'
-    Sib = ' -i 21 -d $SplitSniffCC'
-    X17 = ' -i 21 -d $SplitSniffCC'
+    Blake2s = ' -d $SplitSniffCC0'
+    Sib = ' -i 21 -d $SplitSniffCC0'
+    X17 = ' -i 21 -d $SplitSniffCC0'
     Quark = ''
     Hmq1725 = ''
-    Veltor = ' -d $SplitSniffCC'
+    Veltor = ' -d $SplitSniffCC0'
     X11evo = ''
-    Timetravel = ' -i 25 -d $SplitSniffCC'
-    Blakecoin = ' -d $SplitSniffCC'
-    Lbry = ' -i 28 -d $SplitSniffCC'
-    C11 = ' -d $SplitSniffCC'
-    Nist5 = ' -i 25 -d $SplitSniffCC'
+    Timetravel = ' -i 25 -d $SplitSniffCC0'
+    Blakecoin = ' -d $SplitSniffCC0'
+    Lbry = ' -i 28 -d $SplitSniffCC0'
+    C11 = ' -d $SplitSniffCC0'
+    Nist5 = ' -i 25 -d $SplitSniffCC0'
 }
 
 $Algorithms | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name | ForEach {
     [PSCustomObject]@{
         Type = 'NVIDIA'
         Path = $Path
-        Arguments = -Join ('-a ', $Algorithms.$_, ' -o stratum+tcp://$($Pools.', $_, '.Host):$($Pools.', $_, '.Port) -u $($Pools.', $_, '.User) -p $($Pools.', $_, '.Pass)', $Optimizations.$_)
+        Arguments = -Join ('-a ', $Algorithms.$_, ' -o stratum+tcp://$($Pools.', $_, '.Host):$($Pools.', $_, '.Port) -u $($Pools.', $_, '.User0) -p $($Pools.', $_, '.Pass)', $Optimizations.$_)
         HashRates = [PSCustomObject]@{$_ = -Join ('$($Stats.', $Name, '_', $_, '_HashRate.Week)')}
         API = 'Ccminer'
         Port = 4068
