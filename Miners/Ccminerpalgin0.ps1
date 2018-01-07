@@ -1,6 +1,6 @@
 . .\Include.ps1
 
-$Path = ".\Bin\NVIDIA-Palgin\ccminer.exe"
+$Path = ".\Bin\NVIDIA-Palgin0\ccminer.exe"
 $Uri = "https://github.com/krnlx/ccminer-xevan/releases/download/0.1/ccminer.exe"
 
 $Commands = [PSCustomObject]@{
