@@ -42,9 +42,9 @@ $Algorithms = [PSCustomObject]@{
 }
 
 $Optimizations = [PSCustomObject]@{
-    Lyra2z = ' -d $SplitSniffCC2'
+    Lyra2z = ' -d $SplitSniffCC1'
     Equihash = ''
-    Cryptonight = ' -d $SplitSniffCC2'
+    Cryptonight = ' -d $SplitSniffCC1'
     Ethash = ''
     Sia = ''
     Yescrypt = ''
@@ -58,23 +58,23 @@ $Optimizations = [PSCustomObject]@{
     Groestl = ''
     Keccak = ''
     Scrypt = ''
-    Bitcore = ' -d $SplitSniffCC2'
+    Bitcore = ' -d $SplitSniffCC1'
     Blake2s = ''
     Sib = ''
     X17 = ''
     Quark = ''
-    Hmq1725 = ' -d $SplitSniffCC2'
+    Hmq1725 = ' -d $SplitSniffCC1'
     Veltor = ''
     X11evo = ''
-    Timetravel = ' -d $SplitSniffCC2'
+    Timetravel = ' -d $SplitSniffCC1'
     Blakecoin = ''
     Lbry = ''
-    Jha = ' -d $SplitSniffCC2'
-    Skunk = ' -d $SplitSniffCC2'
-    Tribus = ' -d $SplitSniffCC2'
-    Phi = ' -d $SplitSniffCC2'
-    Hsr = ' -d $SplitSniffCC2'
-    Polytimos = ' -d $SplitSniffCC2'
+    Jha = ' -d $SplitSniffCC1'
+    Skunk = ' -d $SplitSniffCC1'
+    Tribus = ' -d $SplitSniffCC1'
+    Phi = ' -d $SplitSniffCC1'
+    Hsr = ' -d $SplitSniffCC21'
+    Polytimos = ' -d $SplitSniffCC1'
     
 }
 
@@ -82,7 +82,7 @@ $Algorithms | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name 
     [PSCustomObject]@{
         Type = 'NVIDIA2'
         Path = $Path
-        Arguments = -Join ('-a ', $Algorithms.$_, ' -o stratum+tcp://$($Pools.', $_, '.Host):$($Pools.', $_, '.Port) -b 0.0.0.0:4069 -u $($Pools.', $_, '.User2) -p $($Pools.', $_, '.Pass)', $Optimizations.$_)
+        Arguments = -Join ('-a ', $Algorithms.$_, ' -o stratum+tcp://$($Pools.', $_, '.Host):$($Pools.', $_, '.Port) -b 0.0.0.0:4069 -u $($Pools.', $_, '.User1) -p $($Pools.', $_, '.Pass)', $Optimizations.$_)
         HashRates = [PSCustomObject]@{$_ = -Join ('$($Stats.', $Name, '_', $_, '_HashRate.Week)')}
         API = 'Ccminer'
         Port = 4069
