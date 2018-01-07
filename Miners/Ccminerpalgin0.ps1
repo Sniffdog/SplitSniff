@@ -16,7 +16,7 @@ $Commands = [PSCustomObject]@{
     #"hmq1725" = "" #hmq1725
     #"keccak" = "" #Keccak
     #"lbry" = "" #Lbry
-    "lyra2v2" = " -d $SplitSniffCC" #Lyra2RE2
+    #"lyra2v2" = " -d $SplitSniffCC0" #Lyra2RE2
     #"lyra2z" = "" #Lyra2z
     #"myr-gr" = "" #MyriadGroestl
     #"neoscrypt" = "" #NeoScrypt
@@ -30,13 +30,13 @@ $Commands = [PSCustomObject]@{
     #"timetravel" = "" #Timetravel
     #"x11" = "" #X11
     #"veltor" = "" #Veltor
-    "x11evo" = " -d $SplitSniffCC" #X11evo
+    #"x11evo" = " -d $SplitSniffCC0" #X11evo
     #"x17" = "" #X17
     #"yescrypt" = "" #Yescrypt
     #"quark" = "" #Quark
     #"skunk" = "" #skunk
     #"c11" = "" #C11
-    "xevan" = " -d $SplitSniffCC" #Xevan
+    "xevan" = " -d $SplitSniffCC0" #Xevan
 }
 
 $Name = (Get-Item $script:MyInvocation.MyCommand.Path).BaseName
@@ -45,7 +45,7 @@ $Commands | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name | 
     [PSCustomObject]@{
         Type = "NVIDIA"
         Path = $Path
-        Arguments = "-a $_ -o stratum+tcp://$($Pools.(Get-Algorithm($_)).Host):$($Pools.(Get-Algorithm($_)).Port) -u $($Pools.(Get-Algorithm($_)).User) -p $($Pools.(Get-Algorithm($_)).Pass)$($Commands.$_)"
+        Arguments = "-a $_ -o stratum+tcp://$($Pools.(Get-Algorithm($_)).Host):$($Pools.(Get-Algorithm($_)).Port) -u $($Pools.(Get-Algorithm($_)).User0) -p $($Pools.(Get-Algorithm($_)).Pass)$($Commands.$_)"
         HashRates = [PSCustomObject]@{(Get-Algorithm($_)) = $Stats."$($Name)_$(Get-Algorithm($_))_HashRate".Week}
         API = "Ccminer"
         Port = 4068
