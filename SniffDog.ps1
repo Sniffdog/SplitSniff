@@ -1,10 +1,20 @@
 ﻿param(
     [Parameter(Mandatory=$false)]
-    [String]$Wallet,
+    [String]$Wallet0,
+    [Parameter(Mandatory=$false)]
+    [String]$Wallet1,
     [Parameter(Mandatory=$false)]
     [String]$Wallet2,
     [Parameter(Mandatory=$false)]
-    [String]$Wallet3, 
+    [String]$Wallet3,
+    [Parameter(Mandatory=$false)]
+    [String]$Wallet4,
+    [Parameter(Mandatory=$false)]
+    [String]$Wallet5,
+    [Parameter(Mandatory=$false)]
+    [String]$Wallet6,
+    [Parameter(Mandatory=$false)]
+    [String]$Wallet7, 
     [Parameter(Mandatory=$false)]
     [String]$UserName = "Tyredas", 
     [Parameter(Mandatory=$false)]
@@ -28,9 +38,13 @@
     [Parameter(Mandatory=$false)]
     [Array]$MinerName = $null,
     [Parameter(Mandatory=$false)] 
-    [String]$SplitSniffEWBF = "0", 
+    [String]$SplitSniffEWBF0 = "0", 
     [Parameter(Mandatory=$false)] 
-    [String]$SplitSniffCC = "0",
+    [String]$SplitSniffCC0 = "0",
+    [Parameter(Mandatory=$false)] 
+    [String]$SplitSniffEWBF1 = "0", 
+    [Parameter(Mandatory=$false)] 
+    [String]$SplitSniffCC1 = "0",
     [Parameter(Mandatory=$false)] 
     [String]$SplitSniffEWBF2 = "0", 
     [Parameter(Mandatory=$false)] 
@@ -39,6 +53,22 @@
     [String]$SplitSniffEWBF3 = "0", 
     [Parameter(Mandatory=$false)] 
     [String]$SplitSniffCC3 = "0",
+    [Parameter(Mandatory=$false)] 
+    [String]$SplitSniffEWBF4 = "0", 
+    [Parameter(Mandatory=$false)] 
+    [String]$SplitSniffCC4 = "0",
+    [Parameter(Mandatory=$false)] 
+    [String]$SplitSniffEWBF5 = "0", 
+    [Parameter(Mandatory=$false)] 
+    [String]$SplitSniffCC5 = "0",
+    [Parameter(Mandatory=$false)] 
+    [String]$SplitSniffEWBF6 = "0", 
+    [Parameter(Mandatory=$false)] 
+    [String]$SplitSniffCC6 = "0",
+    [Parameter(Mandatory=$false)] 
+    [String]$SplitSniffEWBF7 = "0", 
+    [Parameter(Mandatory=$false)] 
+    [String]$SplitSniffCC7 = "0",
     [Parameter(Mandatory=$false)]
     [Array]$PoolName = $null, 
     [Parameter(Mandatory=$false)]
