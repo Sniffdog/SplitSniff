@@ -31,23 +31,23 @@ $Optimizations = [PSCustomObject]@{
     Sia = ''
     Yescrypt = ''
     BlakeVanilla = ''
-    Lyra2RE2 = ' -d $SplitSniffCC2'
+    Lyra2RE2 = ' -d $SplitSniffCC1'
     Skein = ''
     Qubit = ''
-    NeoScrypt = ' -d $SplitSniffCC2'
+    NeoScrypt = ' -d $SplitSniffCC1'
     X11 = ''
     MyriadGroestl = ''
-    Groestl = ' -d $SplitSniffCC2'
+    Groestl = ' -d $SplitSniffCC1'
     Keccak = ''
     Scrypt = ''
-    Nist5 = ' -d $SplitSniffCC2'
+    Nist5 = ' -d $SplitSniffCC1'
 }
 
 $Algorithms | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name | ForEach {
     [PSCustomObject]@{
         Type = 'NVIDIA2'
         Path = $Path
-        Arguments = -Join ('-a ', $Algorithms.$_, ' -o stratum+tcp://$($Pools.', $_, '.Host):$($Pools.', $_, '.Port) -b 0.0.0.0:4069 -u $($Pools.', $_, '.User2) -p $($Pools.', $_, '.Pass)', $Optimizations.$_)
+        Arguments = -Join ('-a ', $Algorithms.$_, ' -o stratum+tcp://$($Pools.', $_, '.Host):$($Pools.', $_, '.Port) -b 0.0.0.0:4069 -u $($Pools.', $_, '.User1) -p $($Pools.', $_, '.Pass)', $Optimizations.$_)
         HashRates = [PSCustomObject]@{$_ = -Join ('$($Stats.', $Name, '_', $_, '_HashRate.Week)')}
         API = 'Ccminer'
         Port = 4069
