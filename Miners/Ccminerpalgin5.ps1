@@ -1,6 +1,6 @@
 . .\Include.ps1
 
-$Path = ".\Bin\NVIDIA-Palgin2\ccminer.exe"
+$Path = ".\Bin\NVIDIA-Palgin5\ccminer.exe"
 $Uri = "https://github.com/krnlx/ccminer-xevan/releases/download/0.1/ccminer.exe"
 
 $Commands = [PSCustomObject]@{
@@ -16,7 +16,7 @@ $Commands = [PSCustomObject]@{
     #"hmq1725" = "" #hmq1725
     #"keccak" = "" #Keccak
     #"lbry" = "" #Lbry
-    #"lyra2v2" = " -d $SplitSniffCC" #Lyra2RE2
+    #"lyra2v2" = " -d $SplitSniffCC5" #Lyra2RE2
     #"lyra2z" = "" #Lyra2z
     #"myr-gr" = "" #MyriadGroestl
     #"neoscrypt" = "" #NeoScrypt
@@ -30,25 +30,25 @@ $Commands = [PSCustomObject]@{
     #"timetravel" = "" #Timetravel
     #"x11" = "" #X11
     #"veltor" = "" #Veltor
-    #"x11evo" = " -d $SplitSniffCC2" #X11evo
+    #"x11evo" = " -d $SplitSniffCC5" #X11evo
     #"x17" = "" #X17
     #"yescrypt" = "" #Yescrypt
     #"quark" = "" #Quark
     #"skunk" = "" #skunk
     #"c11" = "" #C11
-    "xevan" = " -d $SplitSniffCC2" #Xevan
+    "xevan" = " -d $SplitSniffCC5" #Xevan
 }
 
 $Name = (Get-Item $script:MyInvocation.MyCommand.Path).BaseName
 
 $Commands | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name | ForEach {
     [PSCustomObject]@{
-        Type = "NVIDIA2"
+        Type = "NVIDIA5"
         Path = $Path
-        Arguments = "-a $_ -o stratum+tcp://$($Pools.(Get-Algorithm($_)).Host):$($Pools.(Get-Algorithm($_)).Port) -b 0.0.0.0:4069 -u $($Pools.(Get-Algorithm($_)).User2) -p $($Pools.(Get-Algorithm($_)).Pass)$($Commands.$_)"
+        Arguments = "-a $_ -o stratum+tcp://$($Pools.(Get-Algorithm($_)).Host):$($Pools.(Get-Algorithm($_)).Port) -b 0.0.0.0:4073 -u $($Pools.(Get-Algorithm($_)).User5) -p $($Pools.(Get-Algorithm($_)).Pass)$($Commands.$_)"
         HashRates = [PSCustomObject]@{(Get-Algorithm($_)) = $Stats."$($Name)_$(Get-Algorithm($_))_HashRate".Week}
         API = "Ccminer"
-        Port = 4069
+        Port = 4073
         Wrap = $false
         URI = $Uri
     }
