@@ -1,4 +1,4 @@
-﻿$Path = '.\Bin\NVIDIA-TPruvot2\ccminer.exe'
+﻿$Path = '.\Bin\NVIDIA-TPruvot5\ccminer.exe'
 $Uri = 'https://github.com/tpruvot/ccminer/releases/download/2.2.4-tpruvot/ccminer-x86-2.2.4-cuda9.7z'
 
 $Name = (Get-Item $script:MyInvocation.MyCommand.Path).BaseName
@@ -39,49 +39,49 @@ $Algorithms = [PSCustomObject]@{
 }
 
 $Optimizations = [PSCustomObject]@{
-    Lyra2z = ' -d $SplitSniffCC2'
+    Lyra2z = ' -d $SplitSniffCC5'
     Equihash = ''
-    Cryptonight = ' -d $SplitSniffCC2'
+    Cryptonight = ' -d $SplitSniffCC5'
     Ethash = ''
     Sia = ''
     Yescrypt = ''
     BlakeVanilla = ''
-    Lyra2RE2 = ' -d $SplitSniffCC2'
+    Lyra2RE2 = ' -d $SplitSniffCC5'
     Skein = ''
     Qubit = ''
     NeoScrypt = ''
     X11 = ''
     MyriadGroestl = ''
     Groestl = ''
-    Keccak = ' -d $SplitSniffCC2'
+    Keccak = ' -d $SplitSniffCC5'
     Scrypt = ''
-    Bitcore = ' -d $SplitSniffCC2'
+    Bitcore = ' -d $SplitSniffCC5'
     Blake2s = ''
     Sib = ''
     X17 = ''
     Quark = ''
-    Hmq1725 = ' -d $SplitSniffCC2'
+    Hmq1725 = ' -d $SplitSniffCC5'
     Veltor = ''
-    X11evo = ' -d $SplitSniffCC2'
-    Timetravel = ' -d $SplitSniffCC2'
+    X11evo = ' -d $SplitSniffCC5'
+    Timetravel = ' -d $SplitSniffCC5'
     Blakecoin = ''
     Lbry = ''
-    Jha = ' -d $SplitSniffCC2'
-    Skunk = ' -d $SplitSniffCC2'
-    Tribus = ' -d $SplitSniffCC2'
-    Phi = ' -d $SplitSniffCC2'
-    Hsr = ' -d $SplitSniffCC'
+    Jha = ' -d $SplitSniffCC5'
+    Skunk = ' -d $SplitSniffCC5'
+    Tribus = ' -d $SplitSniffCC5'
+    Phi = ' -d $SplitSniffCC5'
+    Hsr = ' -d $SplitSniffCC5'
     
 }
 
 $Algorithms | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name | ForEach {
     [PSCustomObject]@{
-        Type = 'NVIDIA2'
+        Type = 'NVIDIA5'
         Path = $Path
-        Arguments = -Join ('-a ', $Algorithms.$_, ' -o stratum+tcp://$($Pools.', $_, '.Host):$($Pools.', $_, '.Port) -b 0.0.0.0:4069 -u $($Pools.', $_, '.User2)  -p $($Pools.', $_, '.Pass)', $Optimizations.$_)
+        Arguments = -Join ('-a ', $Algorithms.$_, ' -o stratum+tcp://$($Pools.', $_, '.Host):$($Pools.', $_, '.Port) -b 0.0.0.0:4073 -u $($Pools.', $_, '.User5)  -p $($Pools.', $_, '.Pass)', $Optimizations.$_)
         HashRates = [PSCustomObject]@{$_ = -Join ('$($Stats.', $Name, '_', $_, '_HashRate.Week)')}
         API = 'Ccminer'
-        Port = 4069
+        Port = 4073
         Wrap = $false
         URI = $Uri
     }
