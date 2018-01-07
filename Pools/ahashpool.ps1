@@ -46,7 +46,14 @@ $ahashpool_Request | Get-Member -MemberType NoteProperty | Select -ExpandPropert
             Protocol = "stratum+tcp"
             Host = $ahashpool_Host
             Port = $ahashpool_Port
-            User = $Wallet
+            User0 = $Wallet0
+	    User1 = $Wallet1
+	    User2 = $Wallet2
+	    User3 = $Wallet3
+	    User4 = $Wallet4
+	    User5 = $Wallet5
+	    User6 = $Wallet6
+            User7 = $Wallet7
             Pass = "ID=$Workername,c=$Passwordcurrency"
             Location = $Location
             SSL = $false
