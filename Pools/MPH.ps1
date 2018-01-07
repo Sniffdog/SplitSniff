@@ -50,7 +50,14 @@ $Locations | ForEach {
             Protocol = 'stratum+ssl'
             Host = $_.all_host_list.split(";") | Sort -Descending {$_ -ilike "$Location*"} | Select -First 1
             Port = $_.algo_switch_port
-            User = '$UserName.$WorkerName'
+            User0 = '$UserName.$WorkerName'
+            User1 = '$UserName.$WorkerName'
+            User2 = '$UserName.$WorkerName'
+            User3 = '$UserName.$WorkerName'
+            User4 = '$UserName.$WorkerName'
+            User5 = '$UserName.$WorkerName'
+            User6 = '$UserName.$WorkerName'
+            User7 = '$UserName.$WorkerName'
             Pass = 'x'
             Location = $Location
             SSL = $true
