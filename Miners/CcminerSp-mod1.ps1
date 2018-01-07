@@ -1,7 +1,7 @@
 . .\Include.ps1
 
-$Path = ".\Bin\NVIDIA-SP-PHI2\ccminer-phi-sp1.exe"
-$Uri = 'http://files.dangerd.org/pub/Mining//ccminer-phi-sp1.zip'
+$Path = ".\Bin\NVIDIA-SP-mod\ccminer.exe"
+$Uri = "https://github.com/sp-hash/ccminer/releases/download/1.5.81/release81.7z"
 
 $Commands = [PSCustomObject]@{
     #"bitcore" = "" #Bitcore
