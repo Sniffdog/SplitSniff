@@ -1,4 +1,4 @@
-﻿$Path = '.\Bin\NVIDIA-Poly\ccminer.exe'
+﻿$Path = '.\Bin\NVIDIA-Poly0\ccminer.exe'
 $Uri = 'https://github.com/punxsutawneyphil/ccminer/releases/download/polytimosv2/ccminer-polytimos_v2.zip'
  
 
