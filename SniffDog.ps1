@@ -1,6 +1,10 @@
 ﻿param(
     [Parameter(Mandatory=$false)]
-    [String]$Wallet, 
+    [String]$Wallet,
+    [Parameter(Mandatory=$false)]
+    [String]$Wallet2,
+    [Parameter(Mandatory=$false)]
+    [String]$Wallet3, 
     [Parameter(Mandatory=$false)]
     [String]$UserName = "Tyredas", 
     [Parameter(Mandatory=$false)]
@@ -27,6 +31,14 @@
     [String]$SplitSniffEWBF = "0", 
     [Parameter(Mandatory=$false)] 
     [String]$SplitSniffCC = "0",
+    [Parameter(Mandatory=$false)] 
+    [String]$SplitSniffEWBF2 = "0", 
+    [Parameter(Mandatory=$false)] 
+    [String]$SplitSniffCC2 = "0",
+    [Parameter(Mandatory=$false)] 
+    [String]$SplitSniffEWBF3 = "0", 
+    [Parameter(Mandatory=$false)] 
+    [String]$SplitSniffCC3 = "0",
     [Parameter(Mandatory=$false)]
     [Array]$PoolName = $null, 
     [Parameter(Mandatory=$false)]
