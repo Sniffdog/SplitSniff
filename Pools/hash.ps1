@@ -60,6 +60,13 @@ $Zpool_Request | Get-Member -MemberType NoteProperty | Select -ExpandProperty Na
 	    User6 = $Wallet6
             User7 = $Wallet7
             Pass = "ID=$Workername,c=$Passwordcurrency"
+	    Pass1 = "ID=$Workername,c=$Passwordcurrency1"
+	    Pass2 = "ID=$Workername,c=$Passwordcurrency2"
+	    Pass3 = "ID=$Workername,c=$Passwordcurrency3"
+	    Pass4 = "ID=$Workername,c=$Passwordcurrency4"
+	    Pass5 = "ID=$Workername,c=$Passwordcurrency5"
+	    Pass6 = "ID=$Workername,c=$Passwordcurrency6"
+	    Pass7 = "ID=$Workername,c=$Passwordcurrency7"
             Location = $Location
             SSL = $false
         }
