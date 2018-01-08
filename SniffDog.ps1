@@ -18,7 +18,9 @@
     [Parameter(Mandatory=$false)]
     [String]$UserName = "Tyredas", 
     [Parameter(Mandatory=$false)]
-    [String]$WorkerName = "Sniffdog", 
+    [String]$WorkerName = "Sniffdog",
+    [Parameter(Mandatory=$false)]
+    [String]$RigName = "Hashsynminer001",
     [Parameter(Mandatory=$false)]
     [Int]$API_ID = 0, 
     [Parameter(Mandatory=$false)]
