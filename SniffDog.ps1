@@ -1,6 +1,6 @@
 ﻿param(
     [Parameter(Mandatory=$false)]
-    [String]$Wallet0,
+    [String]$Wallet,
     [Parameter(Mandatory=$false)]
     [String]$Wallet1,
     [Parameter(Mandatory=$false)]
