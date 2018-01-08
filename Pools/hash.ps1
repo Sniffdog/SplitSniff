@@ -46,7 +46,7 @@ $Zpool_Request | Get-Member -MemberType NoteProperty | Select -ExpandProperty Na
             Protocol = "stratum+tcp"
             Host = $Zpool_Host
             Port = $Zpool_Port
-            User0 = $Wallet0
+            User = $Wallet
 	    User1 = $Wallet1
 	    User2 = $Wallet2
 	    User3 = $Wallet3
