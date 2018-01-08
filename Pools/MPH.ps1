@@ -45,6 +45,13 @@ $Locations | ForEach {
             User6 = '$UserName.$WorkerName'
             User7 = '$UserName.$WorkerName'
             Pass = 'x'
+            Pass1 = 'x'
+            Pass2 = 'x'
+            Pass3 = 'x'
+            Pass4 = 'x'
+            Pass5 = 'x'
+            Pass6 = 'x'
+            Pass7 = 'x'
             Location = $Location
             SSL = $false
         }
