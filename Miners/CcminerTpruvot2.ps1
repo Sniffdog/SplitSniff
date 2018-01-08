@@ -70,7 +70,7 @@ $Optimizations = [PSCustomObject]@{
     Skunk = ' -d $SplitSniffCC2'
     Tribus = ' -d $SplitSniffCC2'
     Phi = ' -d $SplitSniffCC2'
-    Hsr = ' -d $SplitSniffCC'
+    Hsr = ' -d $SplitSniffCC2'
     
 }
 
