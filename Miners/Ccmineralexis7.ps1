@@ -1,4 +1,4 @@
-﻿$Path = '.\Bin\NVIDIA-Alexis2\ccminer.exe'
+﻿$Path = '.\Bin\NVIDIA-Alexis7\ccminer.exe'
 $Uri = 'https://github.com/nemosminer/ccminer-Alexis78/releases/download/ccminer-alexis78/ccminer-alexis78-ms2013-cuda7.5.7z'
 
 $Name = (Get-Item $script:MyInvocation.MyCommand.Path).BaseName
@@ -43,38 +43,38 @@ $Optimizations = [PSCustomObject]@{
     Sia = ''
     Yescrypt = ''
     BlakeVanilla = ''
-    Lyra2RE2 = ' -i 25 -d $SplitSniffCC2'
-    Skein = ' -i 28 -d $SplitSniffCC2'
+    Lyra2RE2 = ' -i 25 -d $SplitSniffCC7'
+    Skein = ' -i 28 -d $SplitSniffCC7'
     Qubit = ''
     NeoScrypt = ''
-    X11 = ' -d $SplitSniffCC2'
-    MyriadGroestl = ' -d $SplitSniffCC2'
+    X11 = ' -d $SplitSniffCC7'
+    MyriadGroestl = ' -d $SplitSniffCC7'
     Groestl = ''
-    Keccak = ' -d $SplitSniffCC2'
+    Keccak = ' -d $SplitSniffCC7'
     Scrypt = ''
     Bitcore = ''
-    Blake2s = ' -d $SplitSniffCC2'
-    Sib = ' -i 21 -d $SplitSniffCC2'
-    X17 = ' -i 21.5 -d $SplitSniffCC2'
+    Blake2s = ' -d $SplitSniffCC7'
+    Sib = ' -i 21 -d $SplitSniffCC7'
+    X17 = ' -i 21.5 -d $SplitSniffCC7'
     Quark = ''
     Hmq1725 = ''
-    Veltor = ' -d $SplitSniffCC2'
+    Veltor = ' -d $SplitSniffCC7'
     X11evo = ''
     Timetravel = ''
-    Blakecoin = ' -d $SplitSniffCC2'
-    Lbry = ' -i 28 -d $SplitSniffCC2'
-    C11 = ' -d $SplitSniffCC2'
-    Nist5 = ' -i 25 -d $SplitSniffCC2'
+    Blakecoin = ' -d $SplitSniffCC7'
+    Lbry = ' -i 28 -d $SplitSniffCC7'
+    C11 = ' -d $SplitSniffCC7'
+    Nist5 = ' -i 25 -d $SplitSniffCC7'
 }
 
 $Algorithms | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name | ForEach {
     [PSCustomObject]@{
-        Type = 'NVIDIA2'
+        Type = 'NVIDIA7'
         Path = $Path
-        Arguments = -Join ('-a ', $Algorithms.$_, ' -o stratum+tcp://$($Pools.', $_, '.Host):$($Pools.', $_, '.Port) -b 0.0.0.0:4069 -u $($Pools.', $_, '.User2) -p $($Pools.', $_, '.Pass)', $Optimizations.$_)
+        Arguments = -Join ('-a ', $Algorithms.$_, ' -o stratum+tcp://$($Pools.', $_, '.Host):$($Pools.', $_, '.Port) -b 0.0.0.0:4075 -u $($Pools.', $_, '.User7) -p $($Pools.', $_, '.Pass)', $Optimizations.$_)
         HashRates = [PSCustomObject]@{$_ = -Join ('$($Stats.', $Name, '_', $_, '_HashRate.Week)')}
         API = 'Ccminer'
-        Port = 4069
+        Port = 4075
         Wrap = $false
         URI = $Uri
     }
