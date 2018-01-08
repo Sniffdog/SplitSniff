@@ -1,7 +1,7 @@
 . .\Include.ps1
 
 $Path = ".\Bin\NVIDIA-EWBF\\Zminer.exe"
-$Uri = "https://github.com/nemosminer/EWBF-Zec-Miner/releases/download/0.3.4b/0.3.4b.7z"
+$Uri = "https://github.com/poolgold/ewbf-miner-btg-edition/releases/download/v0.3.4b-BTG/BTG-nVidia.miner.0.3.4b.zip"
 
 $Commands = [PSCustomObject]@{
     #"bitcore" = "" #Bitcore
