@@ -34,7 +34,7 @@ $Algorithms = [PSCustomObject]@{
     Jha = 'jha'
     Skunk = 'skunk'
     Tribus = 'tribus'
-    #Phi = 'phi'
+    Phi = 'phi'
     Hsr = 'hsr'
 }
 
@@ -76,7 +76,7 @@ $Optimizations = [PSCustomObject]@{
 
 $Algorithms | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name | ForEach {
     [PSCustomObject]@{
-        Type = 'NVIDIA2'
+        Type = 'NVIDIA1'
         Path = $Path
         Arguments = -Join ('-a ', $Algorithms.$_, ' -o stratum+tcp://$($Pools.', $_, '.Host):$($Pools.', $_, '.Port) -b 0.0.0.0:4069 -u $($Pools.', $_, '.User1)  -p $($Pools.', $_, '.Pass)', $Optimizations.$_)
         HashRates = [PSCustomObject]@{$_ = -Join ('$($Stats.', $Name, '_', $_, '_HashRate.Week)')}
