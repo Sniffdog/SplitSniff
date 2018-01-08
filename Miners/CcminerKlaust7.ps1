@@ -1,4 +1,4 @@
-﻿$Path = '.\Bin\NVIDIA-KlausT2\ccminer.exe'
+﻿$Path = '.\Bin\NVIDIA-KlausT7\ccminer.exe'
 $Uri = 'https://github.com/KlausT/ccminer/releases/download/8.18/ccminer-818-cuda91-x64.zip'
 
 $Name = (Get-Item $script:MyInvocation.MyCommand.Path).BaseName
@@ -31,26 +31,26 @@ $Optimizations = [PSCustomObject]@{
     Sia = ''
     Yescrypt = ''
     BlakeVanilla = ''
-    Lyra2RE2 = ' -d $SplitSniffCC2'
+    Lyra2RE2 = ' -d $SplitSniffCC7'
     Skein = ''
     Qubit = ''
-    NeoScrypt = ' -d $SplitSniffCC2'
+    NeoScrypt = ' -d $SplitSniffCC7'
     X11 = ''
     MyriadGroestl = ''
-    Groestl = ' -d $SplitSniffCC2'
+    Groestl = ' -d $SplitSniffCC7'
     Keccak = ''
     Scrypt = ''
-    Nist5 = ' -d $SplitSniffCC2'
+    Nist5 = ' -d $SplitSniffCC7'
 }
 
 $Algorithms | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name | ForEach {
     [PSCustomObject]@{
-        Type = 'NVIDIA2'
+        Type = 'NVIDIA7'
         Path = $Path
-        Arguments = -Join ('-a ', $Algorithms.$_, ' -o stratum+tcp://$($Pools.', $_, '.Host):$($Pools.', $_, '.Port) -b 0.0.0.0:4069 -u $($Pools.', $_, '.User2) -p $($Pools.', $_, '.Pass)', $Optimizations.$_)
+        Arguments = -Join ('-a ', $Algorithms.$_, ' -o stratum+tcp://$($Pools.', $_, '.Host):$($Pools.', $_, '.Port) -b 0.0.0.0:4075 -u $($Pools.', $_, '.User7) -p $($Pools.', $_, '.Pass)', $Optimizations.$_)
         HashRates = [PSCustomObject]@{$_ = -Join ('$($Stats.', $Name, '_', $_, '_HashRate.Week)')}
         API = 'Ccminer'
-        Port = 4069
+        Port = 4075
         Wrap = $false
         URI = $Uri
     }
